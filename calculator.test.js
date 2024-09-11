@@ -25,4 +25,8 @@ describe('add function', () => {
         const input = Array.from({ length: 100 }, (_, i) => i + 1).join(","); // "1,2,3,...,100"
         expect(add(input)).toBe(5050); // Sum of numbers from 1 to 100
     });
+
+    test('throws an error when a negative number is provided', () => {
+        expect(() => add("1,-2")).toThrow("negative numbers not allowed: -2");
+    });
 });
