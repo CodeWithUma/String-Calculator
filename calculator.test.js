@@ -20,4 +20,9 @@ describe('add function', () => {
         expect(add("1,2,3")).toBe(6);
         expect(add("4,5,6,7")).toBe(22);
     });
+
+    test('returns the sum of a large amount of numbers', () => {
+        const input = Array.from({ length: 100 }, (_, i) => i + 1).join(","); // "1,2,3,...,100"
+        expect(add(input)).toBe(5050); // Sum of numbers from 1 to 100
+    });
 });
