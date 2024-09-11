@@ -29,4 +29,8 @@ describe('add function', () => {
     test('throws an error when a negative number is provided', () => {
         expect(() => add("1,-2")).toThrow("negative numbers not allowed: -2");
     });
+
+    test('throws an error when multiple negative numbers are provided', () => {
+        expect(() => add("-1,-3,5")).toThrow("negative numbers not allowed: -1, -3");
+    });
 });
